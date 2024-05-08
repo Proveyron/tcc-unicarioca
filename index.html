@@ -1,0 +1,80 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ChatGPT</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="chat.js"></script>
+     <script>var storeGPT = '';</script>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900" rel="stylesheet">
+   </head>
+   <body>
+   <div class="resultScreen" style="display:none"></div>
+      <div class="loader-pre" style="display: none;">
+	  <div class="texto-loader-gpt"></div>
+	  <div class="container-barra"><div class="barra-AI"></div></div>
+         <figure>
+            <div class="dot white"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+         </figure>
+      </div>
+      <div style="display:none" class="blur-container" ></div>
+      <div  style="display:none" id="dropzone"class="importador-xml">
+         <div class="hover-vermelho" id="fechaImportador"><i class="fa-regular fa-circle-xmark"></i></div>
+         <div class="titulo-trab">Arraste alguma avaliação para esta caixa.</div>
+         <img src="upload.webp" style="
+            width: 30%;
+            opacity: .6;
+            -webkit-user-drag: none;
+            ">
+      </div>
+      <div  style="display:none" class="avisos-gerais">
+         <div class="hover-vermelho" id="fechaAviso"><i class="fa-regular fa-circle-xmark"></i></div>
+         <div id="contentAviso" class="titulo-trab"></div>
+      </div>
+      <div class="infos-loader">
+      </div>
+      <div class="container-geral">
+        <!-- <div class="logo-hero"><img src="logo.png"></div> !-->
+         <div class="container-botoes">
+            <div class="botao-acao hover-azul" id="novaProva">Cadastrar Avaliação</div>
+            <div class="botao-acao hover-verde" id="abreProva">Realizar Avaliação</div>
+         </div>
+         <div class="infos-trabalho">
+            <div class="titulo-trab"> TCC Em Ciência da Computação - Unicarioca - 2024.1</div>
+            <div class="nomes-grupo">Brunna de Oliveira Mattos Alves  |  Eduardo Colaço Malaquias da Costa  |  Lucas Pereira da Silva</div>
+         </div>
+      </div>
+      <div class="prova-individual" style="animation: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 normal forwards running blowUpContent; display: none;">
+         <div class="aval-top-content">
+            <div id="aval-title" class="titulo"></div>
+            <div class="hover-vermelho" id="fechaProva"><i class="fa-regular fa-circle-xmark"></i></div>
+            <div class="hover-azul" id="proxQ"><i class="fa-regular fa-circle-right"></i></div>
+            <div class="hover-azul" id="Qant"><i class="fa-regular fa-circle-left"></i></div>
+            <input type="text" placeholder="Nome da avaliação..." id="nome-prova" style="cursor: text;">
+         </div>
+         <div class="wrap-questoes"></div>
+         <div style="display:none"id="generateXMLBtn" class="botao-acao hover-azul exportar-prova">Exportar Avaliação   <i class="fa-regular fa-circle-down"></i></div>
+         <div style="display:none" id="sendToAiBtn" class="botao-acao hover-azul processar-prova">Processar Avaliação   <i class="fa-solid fa-cloud-arrow-up"></i></div>
+      </div>
+      <main style="
+         display: none;
+         ">
+         <section id="messages"></section>
+         <form>
+            <input type="text" name="message" id="message" placeholder="Fale com o ChatGPT...">
+            <button type="button" id="send-message" class="color-gray" disabled="">
+            Enviar
+            </button>
+         </form>
+      </main>
+      <script src="./script.js"></script>
+   </body>
+</html>
